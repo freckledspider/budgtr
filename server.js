@@ -19,6 +19,7 @@ const app = express();
 // -----------------------------------------------
 // Middleware
 // -----------------------------------------------
+
 app.use(express.urlencoded({extended: true}))
 app.use(morgan("tiny"))
 app.use(methodOverride("_method"))
@@ -26,7 +27,7 @@ app.use("/static", express.static("public"))
 app.use('/public', express.static('public'));
 
 // -----------------------------------------------
-// Routes
+// Index Route
 // -----------------------------------------------
 
 // Make /budgets the index page
@@ -64,7 +65,23 @@ app.get('/budgets/', (req, res) => {
 //     );
 // });
 
+// -----------------------------------------------
+// New Route
+// -----------------------------------------------
 
+app.get("/budgets/new", (req, res) => {
+    res.render("new.ejs")
+})
+
+
+// -----------------------------------------------
+// Create Route
+// -----------------------------------------------
+
+app.post("/budgets", (req, res) => {
+    budgets.push(req.body)
+    res.redirect("/budgets")
+})
 
 
 // -----------------------------------------------
