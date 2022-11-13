@@ -5,14 +5,13 @@
     <link rel="stylesheet" href="/public/normalize.css">
     <link rel="stylesheet" href="/public/skeleton.css">
     <body>
+        <div class="container">
         <h1>Budgtr ALL</h1>
         <a href="/budgets/new"><button>Create New Item</button></a>
         <% for(let i = 0; i < allBudgets.length; i++) { %>
-     <div class="container"></div>
         <table>
 <tr>
 <td><%=allBudgets[i].date %></td>
-<div class="container">
 <td><a href="/budgets/<%= i %>"><%=allBudgets[i].name %></a></td>
 
 <td><%=allBudgets[i].amount %></td>
