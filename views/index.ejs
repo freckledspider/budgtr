@@ -2,24 +2,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <link rel="stylesheet" href="public\normalize.css">
-    <link rel="stylesheet" href="public\skeleton.css">
+    <link rel="stylesheet" href="/public/normalize.css">
+    <link rel="stylesheet" href="/public/skeleton.css">
     <body>
-        <div class="container">
         <h1>Budgtr ALL</h1>
         <% for(let i = 0; i < allBudgets.length; i++) { %>
-         <table>
+     <div class="container"></div>
+        <table>
 <tr>
 <td><%=allBudgets[i].date %></td>
-
-<td><a href="/budgets/<%=allBudgets[i].name %>"><%=allBudgets[i].name %></a></td>
+<div class="container">
+<td><a href="/budgets/<%= i %>"><%=allBudgets[i].name %></a></td>
 
 <td><%=allBudgets[i].amount %></td>
 
                 <% } %>
 </tr>
         </table>
-        </div>
+    </div>
     </head>
     </body>
 </html>

@@ -1,7 +1,32 @@
+<!-- This is budgets/:name -->
+
 <!DOCTYPE html>
 <html>
+<head>
+    
     <link rel="stylesheet" href="/public/normalize.css">
     <link rel="stylesheet" href="/public/skeleton.css">
+</head>
     <body>
+        <div class="container">
+        <h1><%= budgets[i].name %></h1>
+        <h3>Date</h3>
+        <%= budgets[i].date %>
+
+        <h3>Name</h3>
+        <%= budgets[i].name %>
+
+        <h3>From</h3>
+        <%= budgets[i].from %>
+
+        <h3>Amount</h3>
+        <%= budgets[i].amount %>
+
+        <h3>Tags</h3>
+        <%= budgets[i].tags %>
+        <br>
+        <a href="/budgets"><button>Back</button></a>
+        </div>
+
     </body>
 </html>
