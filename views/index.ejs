@@ -5,7 +5,7 @@
     var add = 0;
     for (var i = 0; i< budgets.length; i++)
     {
-      add += budgets[i].amount
+      add += parseInt(budgets[i].amount)
     }
     console.log( "Bank Account Total: $", add);
     %>
@@ -32,7 +32,7 @@
 <td><%=allBudgets[i].date %></td>
 <td><a href="/budgets/<%= i %>"><%=allBudgets[i].name %></a></td>
 
-<td id="amount"><%=allBudgets[i].amount %></td>
+<td><%=allBudgets[i].amount %></td>
 
                 <% } %>
 </tr>
