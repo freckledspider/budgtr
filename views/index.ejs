@@ -1,7 +1,25 @@
 <!-- This is /budgets -->
 <!DOCTYPE html>
 <html>
-    <head>
+    <%
+    var add = 0;
+    for (var i = 0; i< budgets.length; i++)
+    {
+      add += budgets[i].amount
+    }
+    console.log( "Bank Account Total: $", add);
+    %>
+
+    <% function bankAccount(){ %>
+        <% if (add < 0) { %>
+            <style>body {background-color: rgb(255, 210, 210);}</style>
+        <% } else { %>
+            <style>body {background-color: rgb(204, 253, 204);}</style>
+    <%    }}
+    
+    bankAccount();
+    %>
+    <%- include("./partials/head.ejs") %>
     <link rel="stylesheet" href="/public/normalize.css">
     <link rel="stylesheet" href="/public/skeleton.css">
     <body>
@@ -14,12 +32,11 @@
 <td><%=allBudgets[i].date %></td>
 <td><a href="/budgets/<%= i %>"><%=allBudgets[i].name %></a></td>
 
-<td><%=allBudgets[i].amount %></td>
+<td id="amount"><%=allBudgets[i].amount %></td>
 
                 <% } %>
 </tr>
         </table>
     </div>
-    </head>
     </body>
 </html>
