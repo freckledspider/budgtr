@@ -31,7 +31,7 @@ app.use('/public', express.static('public'));
 // Index Route
 // -----------------------------------------------
 
-// Make /budgets the index page
+// Make /pokemon the index page
 app.get("/", (req, res) => res.redirect("/budgets"))
 
 // Return all budget data
